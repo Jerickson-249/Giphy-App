@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="./assets/giphy.css">
     <link rel="stylesheet" type="text/css" href="./assets/reset.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./assets/giphy.css">
+
 
 
     <title>Giphy API GifTastic</title>
@@ -16,28 +18,40 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-med-4 text-center"></div>
-                <span class= "animated slidInDown text-center">
-            <h1> Giphy API GifTastic</h1></span>
+            <div class="col text-center">
+                <span class="animated slidInDown text-center">
+                    <h1> Giphy API GifTastic</h1>
+                </span>
+                <p>
+                    <h2>Gifs of Animals!</h2>
+                </p>
 
-            <p>
-                <h2>Gifs of Animals!</h2>
-            </p>
-        </div> 
-    </div>
-            <div class="col-med-8 header">
-                    <form id="addsearch">
-                        <label class="user-input">Pick an animal, any animal for fun!</label>
-                        <input class="user-input" type="text">
-                        <input class="submit btn-primary rounded" type="submit" value="Submit">
-                    </form>
+               
             </div>
+        </div>
+        <div class="row">
+            <div class="col-med-6 text-center">
+            
+                <div id="topics"></div>
+            </div>
+            <div class="col-med-6 ml-3 header">
+                <form id="addsearch">
+                    <label class="user-input">Pick an animal, any animal for fun!</label>
+                    <input id="searchtopic" class="user-input" type="text">
+                    <button id="search" class="btn-primary rounded">SEARCH</button>
+                </form>
+            </div>
+        </div>
 
 
+        <div id="gifs" class="row"></div>
+    </div>
+    <!--Put Jquery before the javaScript file-->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./assets/giphy.js"></script>
 
-<script type="text/javascript"  src="./assets/giphy.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    </div>   
-        </div>  
+
 </body>
+
 </html>
