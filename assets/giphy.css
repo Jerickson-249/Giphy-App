@@ -1,10 +1,15 @@
 img{
-
-    width: 250px;
-    height: 250px;
+    
+    width: 16rem; 
+    height:14rem;
+    
 }
 
 #gifs{
-
+    
     margin-top:50px
+}
+
+.card{
+    margin-bottom: 20px;
 }

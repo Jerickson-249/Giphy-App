@@ -1,17 +1,12 @@
 $(document).ready(function () {
 
     var topics = ['rhinoceros', 'hippopotamus', 'lion', 'tiger', 'bear', 'elephant', 'cheetah'];
-
-
     var apiKey = "zcBHe2DN8JC1y667Dg0ol2uNl1ntMX9A";
- 
-
     var searchBar = document.getElementById("searchBar");
 
     $('.info').empty();
     $("#gifs-appear-here").empty();
-
-
+ 
     // rendering the buttons and handleing the on click
     function createbuttons() {
         $('#topics').empty();
@@ -22,6 +17,7 @@ $(document).ready(function () {
         }
         $(".searchtopic").on("click", function () {
             console.log(this)
+
             // get the index info from the btn to find the topic on the aarray to search for this topic
             var index = $(this).attr("index")
             var topic = topics[index]
@@ -30,11 +26,10 @@ $(document).ready(function () {
             displaying(topic)
 
         })
-
     }
-
     // this is in charge of call api giphy with the topic and render the images
     function displaying(topic) {
+
         //apikey = zcBHe2DN8JC1y667Dg0ol2uNl1ntMX9A
         var queryURL = `https://api.giphy.com/v1/gifs/search?q=${topic}&api_key=${apiKey}&limit=10`;
         $.ajax({
@@ -48,7 +43,7 @@ $(document).ready(function () {
             $("#gifs").empty()
             for (var i = 0; i < response.data.length; i++) {
 
-                var card = `<div class="col"><div class="card" style="width: height:16rem>
+                var card = `<div class="col"><div class="card" style="width: 16rem; height:18rem">
                 <img class="imggifs card-img-top" src=${response.data[i].images.fixed_height_still.url} alt-src=${response.data[i].images.downsized_large.url}></img> 
                 <div class="card-body">
                   <p class="card-text">${response.data[i].rating}</p>
@@ -73,7 +68,6 @@ $(document).ready(function () {
             //   var title = response.data[i].title
         })
     }
-
     createbuttons()
 
 // this is in charge of the form, when search btn is clicked we read the info from the input and we
@@ -85,8 +79,5 @@ $(document).ready(function () {
         displaying(topic)
         topics.push(topic)
         createbuttons()
-
     })
-
-
 })
